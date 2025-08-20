@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { LogIn, LogOut } from "lucide-react";
+import { LogIn, UserPlus } from "lucide-react";
 
 export function Header() {
   return (
@@ -35,19 +35,26 @@ export function Header() {
         {/* Authentication buttons */}
         <div className="flex items-center space-x-4">
           <Button
+            asChild
             variant="outline"
             size="sm"
-            className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent flex items-center gap-2 cursor-pointer"
+            className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent flex items-center gap-2"
           >
-            Login
-            <LogIn className="w-4 h-4" />
+            <Link href="/login">
+              Login
+              <LogIn className="w-4 h-4" />
+            </Link>
           </Button>
+
           <Button
+            asChild
             size="sm"
-            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"
           >
-            Sign up
-            <LogOut className="w-4 h-4" />
+            <Link href="/signup">
+              Sign up
+              <UserPlus className="w-4 h-4" />
+            </Link>
           </Button>
         </div>
       </div>
